@@ -1,5 +1,7 @@
 package chapter01_Array.single_Dimension;
 
+// Find the maximum value of an array
+
 public class maxInArray {
     public static void main(String[] args) {
         int[] arr = {10,3,404,50,7,87};
@@ -12,6 +14,6 @@ public class maxInArray {
   // Optimised way Of Compare           
             max = Math.max(max,arr[i]);      
         }
-        System.out.println(max);
+        System.out.println("Maximum value of Array : "+max);
       }
 }
