@@ -26,7 +26,7 @@ public class secondMaxInArray {
 
     }
     
-
+//  Brute Force : (two Loops or we can say one pass)
     // public static void main(String[] args) {
     //     int[] arr = {13,27,63,74,95,40,32,80};
     //     int max = Integer.MIN_VALUE;         
