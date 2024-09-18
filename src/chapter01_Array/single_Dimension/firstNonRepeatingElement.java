@@ -1,6 +1,9 @@
 package chapter01_Array.single_Dimension;
 
-// Question : Find the first non-repeating element in the array.
+// Question : Find the first non-repeating element in the array. 
+
+
+//  This Will Not Work ???":":":":":":":":
 
 public class firstNonRepeatingElement {
         public static int nonRepeating(int[] arr){
