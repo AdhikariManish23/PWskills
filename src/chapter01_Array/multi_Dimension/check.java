@@ -22,5 +22,6 @@ public class check {
             }
             System.out.println();
         }
+        sc.close();
     }
 }
