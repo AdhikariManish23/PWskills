@@ -8,6 +8,25 @@ import java.util.HashSet;
 
 public class maxString {
 
+    // 1 : More Optimised Code
+    public static int maximumNumberOfStringPairs(String[] words) {
+        int maxPairs = 0;
+        HashSet<String> wordSet = new HashSet<>();
+        for (String word : words) {
+            StringBuilder sb = new StringBuilder(word);
+            String reversedWord = sb.reverse().toString();
+
+            if (wordSet.contains(reversedWord)) {
+                maxPairs++;
+                wordSet.remove(reversedWord); // this will help to use each word pair Once . below example you can see
+                                              // dc appear two time but cd will pair only with 1st dc
+            }
+            wordSet.add(word);
+        }
+        return maxPairs;
+    }
+
+    // 2 : Method
     public static int MaximumString(String[] s) {
         int count = 0;
         HashSet<String> set = new HashSet<>();
@@ -16,7 +35,8 @@ public class maxString {
 
             if (set.contains(re)) {
                 count++;
-                set.remove(re);
+                set.remove(re); // this will help to use each word pair Once . below example you can see dc
+                                // appear two time but cd will pair only with 1st dc
             } else
                 set.add(s[i]);
         }
@@ -35,5 +55,6 @@ public class maxString {
         String[] st = { "cd", "ac", "dc", "fg", "ca", "tu", "ut", "dc" };
 
         System.out.println(MaximumString(st));
+        System.out.println(maximumNumberOfStringPairs(st));
     }
 }
