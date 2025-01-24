@@ -7,59 +7,61 @@ import java.util.HashMap;
 
 public class ThreeDigitEvenNumber {
     public static int[] findEvenNumber(int[] arr) {
+        // Storing all the element in the HashMap With their Frequencies
         HashMap<Integer, Integer> map = new HashMap<>();
-        for (int ele : arr) {
-            if (map.containsKey(ele)) {
-                int freq = map.get(ele);
-                map.put(ele, freq + 1);
+        for (int i = 0; i < arr.length; i++) {
+            if (map.containsKey(arr[i])) {
+                int freq = map.get(arr[i]);
+                map.put(arr[i], freq + 1);
             } else {
-                map.put(ele, 1);
+                map.put(arr[i], 1);
             }
         }
-
+        // Now we create a new array list to store answers
         ArrayList<Integer> ans = new ArrayList<>();
 
-        for (int i = 100; i <= 999; i += 2) {
-            int x = i;
+        for (int i = 100; i < 999; i += 2) {
+            int x = i; // make copy of i we cant change the iteration
             int c = x % 10;
-            x /= 10;
+            x /= 10; // with this we can separate each number
             int b = x % 10;
             x /= 10;
             int a = x;
 
-            if (map.containsKey(a)) { // checking that in the map 'a' element is present or not
-                int aFreq = map.get(a); // and also checking the frequency of the element
-                map.put(a, aFreq - 1);
+            if (map.containsKey(a)) {
+                int aFreq = map.get(a);
+                map.put(a, aFreq - 1); // agar element ki freq 1 se jyada hai toh a per vo ek baar use ho chuka hai toh
+                                       // uski freq kam kro
                 if (aFreq == 1)
-                    map.remove(a); // agar element ki frequency 1 hojati hai toh usko remove kr do iska matlab vo
-                                   // use ho chukaa hai
+                    map.remove(a); // agar freq 1 he hai toh uss element ko remove kr do map se taaki phir se use
+                                   // naah ho vo
 
                 if (map.containsKey(b)) {
-                    int bFreq = map.get(b); // and also checking the frequency of the element
+                    int bFreq = map.get(b);
                     map.put(b, bFreq - 1);
                     if (bFreq == 1)
                         map.remove(b);
 
                     if (map.containsKey(c)) {
-                        int cFreq = map.get(c); // and also checking the frequency of the element
-                        map.put(c, cFreq - 1);
-                        if (cFreq == 1)
-                            map.remove(c);
+                        ans.add(i);
                     }
-                    map.put(b, bFreq);
+
+                    map.put(b, bFreq); // restore the actual frequency
                 }
-                map.put(a, aFreq);
+                map.put(a, aFreq);// restore the actual frequency
             }
         }
+
+        // Convert the ArrayList to an int[] and return it
         int[] ans2 = new int[ans.size()];
         for (int i = 0; i < ans2.length; i++) {
-            ans2[i] = ans.get(i);
+            ans2[i] = ans.get(i); // yeah ArrayList ka get hai
         }
         return ans2;
     }
 
     public static void main(String[] args) {
-        int[] arr = { 1, 2, 3, 0, 4, 6, 7 };
+        int[] arr = { 4, 6, 7 };
         int[] output = findEvenNumber(arr);
 
         // Print the result

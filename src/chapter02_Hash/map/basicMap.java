@@ -11,6 +11,7 @@ public class basicMap {
         map.put("leena", 45);
         map.put("kamlesh", 32);
         map.put("seema", 12);
+
         System.out.println(map);
         System.out.println(map.containsKey("leena"));
         System.out.println(map.containsValue(32));
