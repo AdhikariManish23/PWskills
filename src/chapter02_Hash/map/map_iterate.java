@@ -11,12 +11,14 @@ public class map_iterate {
         map.put("kamlesh", 32);
         map.put("seema", 12);
 
+        System.out.println("this will print only the Keys of Map");
         // this will print only the Keys of Map
         for (String key : map.keySet()) {
             System.out.println(key);
         }
 
         System.out.println();
+        System.out.println("this will print only the Keys along with the values");
         // this will print keys along with the values
         for (String key : map.keySet()) {
             int val = map.get(key);
@@ -24,7 +26,7 @@ public class map_iterate {
         }
 
         System.out.println();
-
+        System.out.println("it only prints values");
         // it only prints values
         for (int val : map.values()) {
             System.out.println(val);

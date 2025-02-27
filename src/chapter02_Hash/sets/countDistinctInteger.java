@@ -30,3 +30,22 @@ public class countDistinctInteger {
         System.out.println(countNumber(arr));
     }
 }
+
+/*
+ * Explanation of reverse function
+ * 
+ * iteration 2:
+ * r = 4
+ * 𝑛=123
+ * 
+ * Extract the last digit:
+ * 𝑛%10=3
+ * 
+ * Update r:
+ * r=r∗10+(n%10)=4∗10+3=43
+ * 
+ * Remove the last digit of n:
+ * n=n/10=12
+ * 
+ * r = 43
+ */

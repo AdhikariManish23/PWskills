@@ -21,10 +21,13 @@ public class UniqueOccurence {
 
         // iske baad saari map ki values set mai daalo
         HashSet<Integer> set = new HashSet<>();
-        for (Integer key : map.keySet()) {
-            int val = map.get(key);
+        for (int val : map.values()) {
             set.add(val);
         }
+        // for (Integer key : map.keySet()) {
+        // int val = map.get(key);
+        // set.add(val);
+        // }
 
         // agar set or map ka size equal matlab kissi bhi element ki same frequency nhi
         // hai toh map or set equal honge
