@@ -17,19 +17,19 @@ public class map_iterate {
             System.out.println(key);
         }
 
-        System.out.println();
-        System.out.println("this will print only the Keys along with the values");
-        // this will print keys along with the values
-        for (String key : map.keySet()) {
-            int val = map.get(key);
-            System.out.println(key + " " + val);
-        }
+        // System.out.println();
+        // System.out.println("this will print only the Keys along with the values");
+        // // this will print keys along with the values
+        // for (String key : map.keySet()) {
+        // int val = map.get(key);
+        // System.out.println(key + " " + val);
+        // }
 
-        System.out.println();
-        System.out.println("it only prints values");
-        // it only prints values
-        for (int val : map.values()) {
-            System.out.println(val);
-        }
+        // System.out.println();
+        // System.out.println("it only prints values");
+        // // it only prints values
+        // for (int val : map.values()) {
+        // System.out.println(val);
+        // }
     }
 }

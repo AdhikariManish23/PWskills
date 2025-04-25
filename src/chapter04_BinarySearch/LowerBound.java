@@ -16,24 +16,27 @@ package chapter04_BinarySearch;
 
 public class LowerBound {
     public static int findLowerBound(int[] arr, int target) {
-        int n = arr.length;
+        int n = arr.length; // why not -1 beacause if the target is greater than the given array and not
+                            // present in the array than we return the size of array
         int lb = n;
         int s = 0, e = n - 1;
 
         while (s <= e) {
             int mid = (s + e) / 2;
-            if (arr[mid] >= target) {   
+            if (arr[mid] >= target) {
                 lb = Math.min(mid, lb);
                 e = mid - 1;
-            } else
+            } else {
                 s = mid + 1;
+            }
+
         }
         return lb;
     }
 
     public static void main(String[] args) {
-        int[] arr = { 10, 20, 30, 30, 40, 50, 60, 70 };
-        int target = 4;
+        int[] arr = { 10, 20, 25, 30, 30, 50, 60, 70 };
+        int target = 30;
         System.out.println(findLowerBound(arr, target));
 
     }

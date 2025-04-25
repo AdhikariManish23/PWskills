@@ -26,8 +26,8 @@ public class UpperBound {
     }
 
     public static void main(String[] args) {
-        int[] arr = { 10, 20, 30, 30, 40, 50, 60, 70 };
-        int target = 30; // 4
+        int[] arr = { 10, 20, 25, 30, 30, 50, 60, 70 };
+        int target = 29;
         System.out.println(findLowerBound(arr, target));
 
     }

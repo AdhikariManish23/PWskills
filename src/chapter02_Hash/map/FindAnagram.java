@@ -5,6 +5,9 @@ import java.util.HashMap;
 public class FindAnagram {
 
     public static boolean isAnagram(String s, String t) {
+        // This method is Worse time complexity but how we can do it with Hash Map
+        // For optimised code go chcek String folder
+
         HashMap<Character, Integer> smap = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
             char key = s.charAt(i);
