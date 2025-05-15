@@ -27,7 +27,6 @@ public class countGreaterThanNum {
         int[] nums = { 2, 5, 4, 7, 8, 5, 3, 2, 33 };
         int ans = countElements2(nums);
         System.out.println("Number of Elements With Strictly Smaller and Greater Elements : " + ans);
-        ;
 
     }
 
